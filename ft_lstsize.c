@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 19:29:23 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/10 19:05:26 by mtoktas          ###   ########.fr       */
+/*   Created: 2023/07/10 20:26:02 by mtoktas           #+#    #+#             */
+/*   Updated: 2023/07/10 20:29:33 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	char	c;
+	int	len;
 
-	if (n == -2147483648)
+	len = 0;
+	while (lst)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		len++;
+		lst = lst->next;
 	}
-	if (n < 0)
-	{
-		n *= -1;
-		write(fd, "-", 1);
-	}
-	if (n >= 10)
-		ft_putnbr_fd(n / 10, fd);
-	c = 48 + (n % 10);
-	write(fd, &c, 1);
+	return (len);
 }
