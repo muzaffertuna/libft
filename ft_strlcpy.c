@@ -6,7 +6,7 @@
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:30:26 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/05 13:59:37 by mtoktas          ###   ########.fr       */
+/*   Updated: 2023/07/11 20:48:27 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	len = 0;
 	while (src[len])
-			len++;
+		len++;
 	if (!dstsize)
 		return (len);
 	while (src[i] && i < dstsize - 1)
@@ -29,8 +29,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	if (dstsize < len)
-			dst[dstsize - 1] = 0;
+		dst[dstsize - 1] = 0;
 	else if (dstsize)
-			dst[i] = 0;
+		dst[i] = 0;
 	return (len);
 }

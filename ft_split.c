@@ -6,11 +6,11 @@
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 14:18:18 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/07 15:49:48 by mtoktas          ###   ########.fr       */
+/*   Updated: 2023/07/12 17:12:20 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include   "libft.h"
+#include "libft.h"
 
 int	ft_wordcount(const char *s, char c)
 {
@@ -26,7 +26,7 @@ int	ft_wordcount(const char *s, char c)
 		if (s[i])
 			count++;
 		while (s[i] && s[i] != c)
-		i++;
+			i++;
 	}
 	return (count);
 }
@@ -60,7 +60,7 @@ char	**ft_wordput(const char *s, char c, char **strs)
 	return (strs);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**strs;
 

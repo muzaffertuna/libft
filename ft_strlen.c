@@ -6,7 +6,7 @@
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 19:28:03 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/05 15:13:41 by mtoktas          ###   ########.fr       */
+/*   Updated: 2023/07/11 20:48:42 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlen(const char *s)
 
 	i = 0;
 	while (s[i])
-			i++;
+		i++;
 	return (i);
 }

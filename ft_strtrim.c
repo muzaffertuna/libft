@@ -6,7 +6,7 @@
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 10:53:44 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/07 14:01:07 by mtoktas          ###   ########.fr       */
+/*   Updated: 2023/07/12 16:23:09 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_trimlen(char const	*s1, char const	*set)
 	return (i + j);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*ptr;
 	size_t	i;

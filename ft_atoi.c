@@ -6,7 +6,7 @@
 /*   By: mtoktas <mtoktas@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 17:45:32 by mtoktas           #+#    #+#             */
-/*   Updated: 2023/07/06 18:03:49 by mtoktas          ###   ########.fr       */
+/*   Updated: 2023/07/12 17:20:13 by mtoktas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 
 int	ft_atoi(const char *str)
 {
-	long long unsigned int	num;
-	int						np;
+	int		i;
+	int		neg;
+	long	res;
 
-	num = 0;
-	np = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
+	i = 0;
+	neg = 1;
+	res = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		np = -1;
-		str++;
+		if (str[i] == '-')
+			neg *= -1;
+		i++;
 	}
-	else if (*str == '+')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		np = 1;
-		str++;
+		res = res * 10 + (str[i] - 48) * neg;
+		if (res > 2147483647)
+			return (-1);
+		if (res < -2147483648)
+			return (0);
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		num = 10 * num + *str - '0';
-		str++;
-	}
-	return ((int)num * np);
+	return (res);
 }
